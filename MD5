@@ -1,0 +1,17 @@
+0ac65105d003c8ebbf0201a1377153ee *ChangeLog
+cb595de79f3743544fbb4598642ad44a *DESCRIPTION
+ccecd5f8b05055346543b7571300b4c8 *NAMESPACE
+5c7ee3f9e1c0ff08e62901e352ee1254 *R/epi.convert.R
+0b955618bbeadac425fb93c23b41d73a *R/epi.data.R
+f454cd0a7e36ccbc512533975e807c86 *R/epi.design.R
+0b16291d03dccfd11c1e2e240a0977d6 *R/epi.info.R
+d0dc19b414f7640cb44d858659445f19 *R/epi.power.R
+14d868d578aaadc65bad7103de2de1f8 *R/glm.to.noia.R
+c59031d2632c7415a6f2c3eb5f145ad6 *R/logodds.to.noia.R
+a8e60a1f6c3034bf98cc4e1bbffdeb71 *R/pen.to.noia.R
+061e90df67e44a19bbf1794fb46244ff *R/varex.to.noia.R
+62cf0e77a9a0d5de23584dd272dc2212 *man/epi.convert.Rd
+8836172a589f6f0bebb6840adceb0006 *man/epi.data.Rd
+d515a059d309a870e04c917a6acb7784 *man/epi.design.Rd
+50e549f06ec9cd3bf7cf44e4dfe1be60 *man/epi.power.Rd
+fa8b50f18119257b96561a4550033608 *man/epipen.Rd

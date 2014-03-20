@@ -1,0 +1,17 @@
+Package: epipen
+Type: Package
+Title: Epistatic and penetrance models for two-locus genetic
+        interactions
+Version: 0.9-2
+Date: 2014-3-20
+Author: Raymond Walters, Charles Laurin, Gitta Lubke
+Maintainer: Raymond Walters <rwalters@nd.edu>
+Imports: pwr
+Suggests: asypow
+Description: The 'epipen' package provides a set of utilities for using common models of epistasis. Interactions between two biallelic loci (e.g. SNPs) can easily be represented using GLM regression parameters, penetrance models, or variance components. Functions are included for conversion among these common interaction models, as well as data generation, power analysis, and effect size measures.
+License: GPL (>= 2)
+LazyLoad: yes
+Packaged: 2014-03-20 18:55:48 UTC; rwalters
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2014-03-21 20:39:56

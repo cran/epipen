@@ -1,0 +1,10 @@
+# Alt: Export all names
+# exportPattern(".")
+
+export(epi.convert,
+		epi.data,
+		epi.design,
+		epi.power)
+
+importFrom(pwr,
+				pwr.f2.test)

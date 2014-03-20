@@ -1,0 +1,7 @@
+2014-3-19		Raymond Walters		<rwalters@nd.edu>
+
+* First public release
+* Streamlined input validation for internal functions
+* Added allele frequency control to epi.design
+* Removed asypow from Imports due to license restrictions, 
+	using epi.power() will prompt user to install if necessary
