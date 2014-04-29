@@ -81,7 +81,7 @@ If \code{verbose=TRUE}, more complete information is returned. The output will i
 }
 }
 \references{
-Walters, R.K., Laurin, C., and Lubke, G.H. (in prep). EpiPen: An R package to investigate two-locus epistatic models.
+Walters, R.K., Laurin, C., and Lubke, G.H. (2014). EpiPen: An R package to investigate two-locus epistatic models. \emph{Twin Research and Human Genetics}. doi:10.1017/thg.2014.25
 }
 \author{
 Raymond Walters

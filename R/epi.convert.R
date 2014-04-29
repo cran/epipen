@@ -292,18 +292,18 @@ function(modelin,params,modelout=c(modelin,"NOIA_S"),pa=NULL,pb=NULL,distn,mu=NA
 		
 			### output design matrix
 			# allele freqs
-			pa1 <- pa.V[3] + pa.V[2]/2
-			pb1 <- pb.V[3] + pb.V[2]/2
+			pa1 <- pa.V[1] + pa.V[2]/2
+			pb1 <- pb.V[1] + pb.V[2]/2
 		
 			# univariate design matrices
 			designA.M <- matrix(c(
 				1,-2*(1-pa1),-2*(1-pa1)^2,
-				1,1-2*pa1,2*pa1*(1-pa1),
+				1,-1+2*pa1,2*pa1*(1-pa1),
 				1,2*pa1,-2*pa1^2),3,3,byrow=TRUE)
 		
 			designB.M <- matrix(c(
 				1,-2*(1-pb1),-2*(1-pb1)^2,
-				1,1-2*pb1,2*pb1*(1-pb1),
+				1,-1+2*pb1,2*pb1*(1-pb1),
 				1,2*pb1,-2*pb1^2),3,3,byrow=TRUE)
 		
 			# combine two loci in design

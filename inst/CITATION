@@ -1,0 +1,16 @@
+citHeader("To cite package 'EpiPen' in publications use:")
+
+citEntry(entry="Article",
+         title = "EpiPen: An R Package to Investigate Two-Locus Models",
+         author = personList(as.person("Raymond K. Walters"),
+                             as.person("Charles Laurin"),
+                             as.person("Gitta H. Lubke")),
+         year = 2014,
+         note = paste("Advance online publication"),
+         journal = paste("Twin Research and Human Genetics"),
+         doi = {"10.1017/thg.2014.25"},
+
+         textVersion =
+         paste("Walters, R.K., Laurin, C., & Lubke, G.H. (2014). EpiPen: An R Package to Investigate Two-Locus Models. Twin Research and Human Genetics. Advance online publication. doi:10.1017/thg.2014.25")
+)
+

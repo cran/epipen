@@ -33,7 +33,7 @@ One of "NOIA_S", "NOIA_F", "G2A", "F2", "Finf", "unweight", or "genotype" specif
 An \eqn{N \times 9}{N by 9} design matrix, with columns corresponding to the parameters of the two-locus GLM model, where \eqn{N} is the length of the data vectors \code{x} and \code{z}. Specifically, the columns of the output contain the appropriate dummy variables for the selected \code{model}. Columns of the matrix are labeled with the appropriate variable names.
 }
 \references{
-Walters, R.K., Laurin, C., and Lubke, G.H. (in prep). EpiPen: An R package to investigate two-locus epistatic models.
+Walters, R.K., Laurin, C., and Lubke, G.H. (2014). EpiPen: An R package to investigate two-locus epistatic models. \emph{Twin Research and Human Genetics}. doi:10.1017/thg.2014.25
 }
 \author{
 Raymond Walters

@@ -84,7 +84,8 @@ Neuman, R.J., and Rice, J.P. (1992). Two-locus models of disease. \emph{Genetic 
 
 McKelvey, R., and Zavoina, W. (1975). A Statistical model for the analysis of ordinal level dependent variables. \emph{Journal of Mathematical Sociology}, 4: 103-120.
 
-Walters, R.K., Laurin, C., and Lubke, G.H. (in prep). EpiPen: An R package to investigate two-locus epistatic models.}
+Walters, R.K., Laurin, C., and Lubke, G.H. (2014). EpiPen: An R package to investigate two-locus epistatic models. \emph{Twin Research and Human Genetics}. doi:10.1017/thg.2014.25
+}
 \author{
 Raymond Walters
 }

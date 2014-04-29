@@ -113,7 +113,7 @@ epi.power <- function(truebetas,model,distn,full=rep(TRUE,9),reduced,N,alpha=.05
 	
 		# get multiple R^2 between full, true models
 		if(!all(full)){
-			fit1 <- lm(ytrue~.,data=cbind(ytrue,design.M[,full, drop=FALSE]),weights=p.V)
+			fit1 <- lm(ytrue~0+.,data=cbind(ytrue,design.M[,full, drop=FALSE]),weights=p.V)
 			RRft <- summary(fit1)$r.squared
 		}else{
 			RRft <- 1
@@ -123,7 +123,7 @@ epi.power <- function(truebetas,model,distn,full=rep(TRUE,9),reduced,N,alpha=.05
 		RR_f <- (RRft * (vary-vare))/vary
 		
 		# get multiple R^2 between true, reduced models
-		fit2 <- lm(ytrue~.,data=cbind(ytrue,design.M[,reduced, drop=FALSE]),weights=p.V)
+		fit2 <- lm(ytrue~0+.,data=cbind(ytrue,design.M[,reduced, drop=FALSE]),weights=p.V)
 		RRrt <- summary(fit2)$r.squared
 		
 		# multiple R^2 for reduced model
@@ -155,8 +155,8 @@ epi.power <- function(truebetas,model,distn,full=rep(TRUE,9),reduced,N,alpha=.05
 		
 		# if not full model not saturated, get parameters
 		if(any(!full)){
-			ytrue <- as.matrix(design.M) %*% as.matrix(truebetas,ncol=1)
-			fit1 <- lm(ytrue~.,data=cbind(ytrue,design.M[,full, drop=FALSE]),weights=p.V)
+			ytrue <- plogis(as.matrix(design.M) %*% as.matrix(truebetas,ncol=1))
+			fit1 <- glm(ytrue~0+.,data=cbind(ytrue,design.M[,full, drop=FALSE]),family=binomial(link=logit),weights=p.V)
 			B.V <- as.vector(coef(fit1))
 		}else{
 			B.V <- truebetas
@@ -199,8 +199,8 @@ epi.power <- function(truebetas,model,distn,full=rep(TRUE,9),reduced,N,alpha=.05
 		
 		# if not full model not saturated, get parameters
 		if(any(!full)){
-			ytrue <- as.matrix(design.M) %*% as.matrix(truebetas,ncol=1)
-			fit1 <- lm(ytrue~.,data=cbind(ytrue,design.M[,full, drop=FALSE]),weights=p.V)
+			ytrue <- pnorm(as.matrix(design.M) %*% as.matrix(truebetas,ncol=1))
+			fit1 <- glm(ytrue~0+.,data=cbind(ytrue,design.M[,full, drop=FALSE]),weights=p.V,family=binomial(link=probit))
 			B.V <- as.vector(coef(fit1))
 		}else{
 			B.V <- truebetas

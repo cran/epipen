@@ -1,4 +1,12 @@
-2014-3-19		Raymond Walters		<rwalters@nd.edu>
+2014-4-29		version 1.0-0
+
+* Official publication version
+* Added CITATION file
+* Bug fixes to design matrix of G2A, NOIA_F
+* Bug fixes for power when full model is not saturated
+
+
+2014-3-19		version 0.9-2
 
 * First public release
 * Streamlined input validation for internal functions

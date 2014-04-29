@@ -18,7 +18,7 @@ A wide variety of models exist for genetic interactions between two biallelic lo
 \item \code{\link{epi.power}}, for power analysis of testing the parameters in each model
 }
 
-See the documentation for the details of using each function. Additional information on this package can be found in Walters et al. (in preparation).
+See the documentation for the details of using each function. Additional information on this package can be found in Walters et al. (2014).
 }
 
 \section{Models}{
@@ -161,7 +161,7 @@ McKelvey, R., and Zavoina, W. (1975). A Statistical model for the analysis of or
 
 Neuman, R.J., and Rice, J.P. (1992). Two-locus models of disease. \emph{Genetic Epidemiology}, 9(5): 347-365.
 
-Walters, R.K., Laurin, C., and Lubke, G.H. (in preparation). EpiPen: An R package to investigate two-locus epistatic models.
+Walters, R.K., Laurin, C., and Lubke, G.H. (2014). EpiPen: An R package to investigate two-locus epistatic models. \emph{Twin Research and Human Genetics}. doi:10.1017/thg.2014.25
 
 Zeng, Z.-B., Wang, T., and Zou, W. (2005) Modeling quantitative trait loci and interpretation of models. \emph{Genetics}, 169: 1711-1725.
 }

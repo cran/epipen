@@ -62,7 +62,7 @@ Allele/genotype frequencies \code{pa} and \code{pb} are used to determine the ex
 A length(N) by 2 matrix of the estimated power at each given sample size. If \code{plotit=TRUE}, a line plot of the power as a function of sample size is also produced.
 }
 \references{
-Walters, R.K., Laurin, C., and Lubke, G.H. (in prep). EpiPen: An R package to investigate two-locus epistatic models.
+Walters, R.K., Laurin, C., and Lubke, G.H. (2014). EpiPen: An R package to investigate two-locus epistatic models. \emph{Twin Research and Human Genetics}. doi:10.1017/thg.2014.25
 }
 \author{
 Raymond Walters, Charles Laurin

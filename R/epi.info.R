@@ -78,7 +78,7 @@ function(betas,pa=NULL,pb=NULL,model=NULL,distn,ve=NA){
 	}else{
 	
 		B.V <- epi.convert(modelin=model,params=betas,modelout="NOIA_S",
-					pa=pa,pb=pb,distn=distn,ve=NA,verbose=FALSE)$NOIA_S
+					pa=pa,pb=pb,distn=distn,ve=ve,verbose=FALSE)$NOIA_S
 					
 	}
 	

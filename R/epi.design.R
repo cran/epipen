@@ -23,6 +23,7 @@ function(x,z,model=NULL,pa=NULL,pb=NULL){
 	### use allele freqs if given, else use observed freqs
 	if(is.null(pa) || missing(pa)){
 		pa <- mean(x,na.rm=TRUE)/2
+		pA <- 1-pa
 		pAA <- mean(x==0,na.rm=TRUE)
 		pAa <- mean(x==1,na.rm=TRUE)
 		paa <- mean(x==2,na.rm=TRUE)
@@ -33,6 +34,7 @@ function(x,z,model=NULL,pa=NULL,pb=NULL){
 		pAA <- (1-pa)^2
 		pAa <- 2*pa*(1-pa)
 		paa <- pa^2
+		pA <- 1-pa
 	}else if(length(pa)==3){
 		if(!is.numeric(pa) || any(pa <= 0) || any(pa >= 1)){
 			stop("Genotype frequencies pa must be numeric values between zero and 1")
@@ -44,11 +46,13 @@ function(x,z,model=NULL,pa=NULL,pb=NULL){
 		pAa <- pa[2]
 		paa <- pa[3]
 		pa <- paa + (pAa/2)
+		pA <- 1-pa
 	}else{
 		stop("pa must be either a single numeric value giving allele frequencies for the first loci, or a length 3 numeric vector giving genotype frequencies")
 	}
 	if(is.null(pb) || missing(pb)){
 		pb <- mean(z,na.rm=TRUE)/2
+		pB <- 1-pb
 		pBB <- mean(z==0,na.rm=TRUE)
 		pBb <- mean(z==1,na.rm=TRUE)
 		pbb <- mean(z==2,na.rm=TRUE)
@@ -59,6 +63,7 @@ function(x,z,model=NULL,pa=NULL,pb=NULL){
 		pBB <- (1-pb)^2
 		pBb <- 2*pb*(1-pb)
 		pbb <- pb^2
+		pB <- 1-pb
 	}else if(length(pb)==3){
 		if(!is.numeric(pb) || any(pb <= 0) || any(pb >= 1)){
 			stop("Genotype frequencies pb must be numeric values between zero and 1")
@@ -70,6 +75,7 @@ function(x,z,model=NULL,pa=NULL,pb=NULL){
 		pBb <- pb[2]
 		pbb <- pb[3]
 		pb <- pbb + (pBb/2)
+		pB <- 1-pb
 	}else{
 		stop("pb must be either a single numeric value giving allele frequencies for the first loci, or a length 3 numeric vector giving genotype frequencies")
 	}
@@ -104,9 +110,9 @@ function(x,z,model=NULL,pa=NULL,pb=NULL){
 		# construct design matrix
 		dmain.M <- data.frame(
 			x_a=x-pAa-2*paa,
-			x_d=c(-pAa,1-pAa,pAa)[x+1],
+			x_d=c(-pAa,1-pAa,-pAa)[x+1],
 			z_a=z-pBb-2*pbb,
-			z_d=c(-pBb,1-pBb,pBb)[z+1]
+			z_d=c(-pBb,1-pBb,-pBb)[z+1]
 		)
 		dint.M <- data.frame(
 			xz_aa=dmain.M[,"x_a"] * dmain.M[,"z_a"],
@@ -123,10 +129,10 @@ function(x,z,model=NULL,pa=NULL,pb=NULL){
 		
 		# construct design matrix
 		dmain.M <- data.frame(
-			x_a=c(-2*(1-pa),pa-(1-pa),2*pa)[x+1],
-			x_d=c(-2*(1-pa)^2,2*pa*(1-pa),-2*pa^2)[x+1],
-			z_a=c(-2*(1-pb),pb-(1-pb),2*pb)[z+1],
-			z_d=c(-2*(1-pb)^2,2*pb*(1-pb),-2*pb^2)[z+1],
+			x_a=c(-2*(1-pA),pA-(1-pA),2*pA)[x+1],
+			x_d=c(-2*(1-pA)^2,2*pA*(1-pA),-2*pA^2)[x+1],
+			z_a=c(-2*(1-pB),pB-(1-pB),2*pB)[z+1],
+			z_d=c(-2*(1-pB)^2,2*pB*(1-pB),-2*pB^2)[z+1]
 		)
 		dint.M <- data.frame(
 			xz_aa=dmain.M[,"x_a"] * dmain.M[,"z_a"],

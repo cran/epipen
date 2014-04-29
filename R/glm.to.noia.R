@@ -102,8 +102,8 @@ function(betas,model,pa=NULL,pb=NULL){
 	}else if(model=="G2A"){
 	
 		# allele freqs
-		pa1 <- pa.V[3] + pa.V[2]/2
-		pb1 <- pb.V[3] + pb.V[2]/2
+		pa1 <- pa.V[1] + pa.V[2]/2
+		pb1 <- pb.V[1] + pb.V[2]/2
 	
 		# univariate design matrices
 		designA.M <- matrix(c(
